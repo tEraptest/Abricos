@@ -1,0 +1,142 @@
+.product {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* Если карточка - ссылка */
+  color: var(--color-text-primary); /* Если карточка - ссылка */
+  transition: box-shadow 0.2s ease-in-out;
+  height: 100%; /* Занимает всю доступную высоту */
+}
+.product:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-container {
+  position: relative; /* Для позиционирования значков */
+  width: 100%;
+  padding-top: 75%; /* Соотношение сторон 4:3 для картинки (можно менять) */
+  overflow: hidden;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Чтобы видеть весь продукт */
+  padding: 10px; /* Небольшой отступ картинки от краев */
+  box-sizing: border-box;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-palette-vibrant-red);
+  color: var(--color-text-light);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-text-secondary);
+  z-index: 1;
+  transition: color 0.2s, background-color 0.2s;
+}
+.favorite-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-palette-vibrant-red);
+}
+.favorite-icon {
+  /* Если будешь использовать иконки */
+  width: 18px;
+  height: 18px;
+}
+
+.product-info {
+  padding: 10px 15px; /* Паддинги для текстовой части */
+  flex-grow: 1; /* Занимает доступное место */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Распределяет контент */
+}
+
+.product-name {
+  font-size: 0.95em;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+  /* Ограничение на 2 строки */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.6em; /* Примерная высота для 2 строк */
+  line-height: 1.3em;
+}
+
+.product-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выравниваем по левому краю */
+  margin-top: 5px; /* Отступ сверху */
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.product-old-price {
+  font-size: 0.9em;
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+  line-height: 1.2;
+}
+
+.add-to-cart-button {
+  background-color: var(--color-palette-orange-red);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 0; /* У кнопки нет скругления */
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 10px; /* Отступ от текстового блока */
+  font-weight: 500;
+  text-align: center;
+  display: flex; /* Для иконки (если будет) */
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--color-palette-vibrant-red);
+}
+.cart-icon {
+  /* Если будешь использовать иконки */
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,95 @@
+/* pages/Home.css */
+.home {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.home-section {
+  margin-bottom: 40px;
+  background-color: var(--color-background-light); /* Белый фон для секций */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.slider-section {
+  padding: 0; /* Убираем внутренний паддинг для слайдера */
+  background-color: transparent; /* Убираем фон у секции слайдера */
+  box-shadow: none; /* Убираем тень */
+  border-radius: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Увеличим отступ */
+  padding-bottom: 10px; /* Отступ под заголовком */
+  border-bottom: 1px solid var(--color-border); /* Разделитель */
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.6em; /* Чуть меньше */
+  color: var(--color-palette-dark-red);
+  font-weight: 600; /* Жирнее */
+}
+
+.section-link {
+  color: var(--color-palette-orange-red);
+  font-size: 0.9em; /* Поменьше */
+  font-weight: 500;
+  white-space: nowrap;
+}
+.section-link:hover {
+  color: var(--color-palette-vibrant-red);
+  text-decoration: none;
+}
+
+/* --- Стили для горизонтального скролла --- */
+.category-list,
+.product-list-horizontal .product-list > div {
+  /* Важно: обращаемся к обертке внутри ProductList */
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--color-palette-light-yellow) transparent; /* Firefox */
+}
+
+.category-list::-webkit-scrollbar,
+.product-list-horizontal .product-list > div::-webkit-scrollbar {
+  height: 8px;
+}
+.category-list::-webkit-scrollbar-track,
+.product-list-horizontal .product-list > div::-webkit-scrollbar-track {
+  background: transparent;
+}
+.category-list::-webkit-scrollbar-thumb,
+.product-list-horizontal .product-list > div::-webkit-scrollbar-thumb {
+  background-color: var(--color-palette-light-yellow);
+  border-radius: 4px;
+}
+.category-list::-webkit-scrollbar-thumb:hover,
+.product-list-horizontal .product-list > div::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-palette-orange);
+}
+/* --- Конец стилей для горизонтального скролла --- */
+
+/* Контейнер для ProductList в горизонтальном режиме */
+.product-list-horizontal .product-list > div {
+  gap: 15px; /* Добавляем расстояние между продуктами */
+}
+
+/* Стиль для карточки продукта внутри горизонтального списка */
+.product-list-horizontal .product-list > div > .product {
+  flex-shrink: 0;
+  width: 200px; /* Задаем ширину карточки */
+  margin-right: 0; /* Убираем margin, если он был */
+}
+
+/* Стиль для контейнера категорий */
+.category-list {
+  gap: 15px; /* Расстояние между карточками категорий */
+}
