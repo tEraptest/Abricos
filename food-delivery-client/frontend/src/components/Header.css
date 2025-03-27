@@ -17,25 +17,26 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  gap: 15px; /* Добавим отступы между основными блоками шапки */
 }
 
 .header-logo {
   margin-right: 20px;
-  flex-shrink: 0; /* Предотвращаем сжатие логотипа */
+  flex-shrink: 0;
 }
 
 .header-logo img {
-  height: 60px; /* Задай нужный размер */
+  height: 60px; /* Убедись, что этот размер подходит */
   width: auto;
-  display: block; /* Убирает лишний отступ снизу */
+  display: block;
 }
 
 .header-navigation {
   display: flex;
   align-items: center;
   flex-grow: 1; /* Занимает доступное пространство */
-  margin-right: 20px; /* Отступ справа перед кнопками действий */
-  position: relative; /* Для позиционирования меню каталога */
+  /* margin-right больше не нужен, т.к. используем gap в .header-container */
+  position: relative;
 }
 
 .catalog-button {
@@ -49,29 +50,29 @@
   display: flex;
   align-items: center;
   font-weight: 500;
-  white-space: nowrap; /* Чтобы текст не переносился */
+  white-space: nowrap;
 }
 .catalog-button:hover {
   background-color: var(--color-palette-orange-red);
 }
 
 .catalog-button-icon {
-  margin-right: 8px; /* Увеличим отступ */
+  margin-right: 8px;
 }
 
 .catalog-button-icon span {
   display: block;
-  width: 18px; /* Немного шире */
+  width: 18px;
   height: 2px;
   background-color: var(--color-text-light);
-  margin: 4px 0; /* Увеличим расстояние между полосками */
+  margin: 4px 0;
   border-radius: 1px;
 }
 
 .catalog-menu {
   position: absolute;
-  top: calc(100% + 10px); /* С отступом под кнопкой */
-  left: 0; /* От левого края .header-navigation */
+  top: calc(100% + 10px);
+  left: 0;
   background-color: var(--color-background-light);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border);
@@ -87,30 +88,26 @@
   margin: 0;
 }
 
-/*
-.catalog-menu li {
-}
-*/
-
 .catalog-menu a {
   text-decoration: none;
   color: var(--color-text-primary);
   display: block;
-  padding: 8px 12px; /* Добавили паддинг сюда */
-  border-radius: 4px; /* Скругление для ссылки */
+  padding: 8px 12px;
+  border-radius: 4px;
   white-space: nowrap;
 }
 
 .catalog-menu a:hover {
   background-color: var(--color-background-medium);
   color: var(--color-palette-vibrant-red);
-  text-decoration: none; /* Убираем подчеркивание при наведении */
+  text-decoration: none;
 }
 
 .header-search {
   display: flex;
   flex-grow: 1; /* Поиск занимает доступное место */
-  margin-right: 20px;
+  min-width: 200px; /* Минимальная ширина для поиска */
+  /* margin-right больше не нужен */
 }
 
 .header-search input {
@@ -118,7 +115,7 @@
   border: 1px solid var(--color-border);
   border-radius: 5px 0 0 5px;
   margin-right: 0;
-  width: 100%; /* Растягивается */
+  width: 100%;
   font-size: 0.9rem;
 }
 .header-search input:focus {
@@ -142,8 +139,8 @@
 }
 
 .header-address {
-  margin-left: 20px; /* Отступ слева */
-  flex-shrink: 0; /* Не сжимать кнопку адреса */
+  /* margin-left больше не нужен */
+  flex-shrink: 0;
 }
 
 .header-address button {
@@ -163,29 +160,69 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
-  flex-shrink: 0; /* Не сжимать кнопки */
+  gap: 15px; /* Расстояние между элементами в блоке actions */
+  flex-shrink: 0;
 }
-.header-actions button {
-  /* Стиль для кнопки "Войти" */
+
+/* Стили для ссылок ("Избранное", "Корзина") внутри header-actions */
+.header-actions a {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  padding: 8px 0;
+  transition: color 0.2s ease; /* Плавный переход цвета */
+}
+.header-actions a:hover {
+  color: var(--color-palette-vibrant-red);
+  text-decoration: none;
+}
+
+/* === СТИЛИ ДЛЯ СОСТОЯНИЯ АУТЕНТИФИКАЦИИ === */
+
+/* Приветствие пользователя */
+.header-username {
+  /* margin-right уже не нужен из-за gap в .header-actions */
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Общие стили для кнопок/ссылок Войти/Выйти/Регистрация */
+.logout-button,
+.login-button,
+.register-button {
   background: none;
   border: 1px solid var(--color-border);
   color: var(--color-text-primary);
   padding: 8px 15px;
   white-space: nowrap;
+  border-radius: 5px;
+  text-decoration: none; /* Для Link */
+  font-size: 0.9em;
+  font-weight: 500; /* Сделаем чуть жирнее */
+  cursor: pointer; /* Добавляем курсор для button */
+  display: inline-block; /* Для корректного отображения Link */
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
-.header-actions button:hover {
+
+/* Стили при наведении */
+.logout-button:hover,
+.login-button:hover,
+.register-button:hover {
   background-color: var(--color-background-medium);
   border-color: var(--color-text-secondary);
-}
-.header-actions a {
-  /* Стиль для ссылок "Избранное", "Корзина" */
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  white-space: nowrap;
-  padding: 8px 0; /* Добавим паддинг для кликабельной области */
-}
-.header-actions a:hover {
-  color: var(--color-palette-vibrant-red);
+  color: var(--color-text-primary);
   text-decoration: none;
+}
+
+.register-button {
+  background-color: var(--color-palette-light-yellow);
+  border-color: var(--color-palette-light-yellow);
+  color: var(--color-text-primary);
+}
+.register-button:hover {
+  background-color: var(--color-palette-orange);
+  border-color: var(--color-palette-orange);
 }

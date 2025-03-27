@@ -1,0 +1,51 @@
+/* components/AuthForm.css */
+.auth-form {
+  max-width: 400px;
+  margin: 40px auto; /* Центрируем и добавляем отступы */
+  padding: 30px;
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--color-palette-dark-red);
+}
+
+/* Используем стили для .form-group, .form-label, .form-control, .is-invalid, .invalid-feedback из Input.css */
+
+.error-message {
+  color: var(--color-palette-vibrant-red);
+  background-color: rgba(230, 76, 101, 0.1);
+  border: 1px solid rgba(230, 76, 101, 0.3);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  font-weight: 500;
+  background-color: var(--color-palette-orange-red);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px; /* Отступ сверху */
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover:not(:disabled) {
+  background-color: var(--color-palette-vibrant-red);
+}
+
+.auth-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
