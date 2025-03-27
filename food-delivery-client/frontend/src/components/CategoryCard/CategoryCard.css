@@ -1,4 +1,4 @@
-/* components/CategoryCard.css */
+/* components/CategoryCard.module.css */
 .category-card {
   display: flex;
   flex-direction: column;

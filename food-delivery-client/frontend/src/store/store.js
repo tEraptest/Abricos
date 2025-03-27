@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartReducer from "./cartSlice"; // Предполагаем, что он у тебя есть
-import productsReducer from "./productsSlice"; // Предполагаем, что он у тебя есть
-import authReducer from "./authSlice"; // Импортируем новый редьюсер
+import cartReducer from "./slices/cartSlice"; // Обновленный путь
+import productsReducer from "./slices/productsSlice"; // Обновленный путь
+import authReducer from "./slices/authSlice"; // Обновленный путь
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer, // Добавляем authReducer
+    auth: authReducer,
     cart: cartReducer,
     products: productsReducer,
-    // Добавь другие редьюсеры, если они есть
   },
 });

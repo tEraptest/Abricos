@@ -113,20 +113,9 @@
 				<!-- Обновляем версию компилятора Maven, если нужно -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<!-- Версия плагина может наследоваться от родительского POM -->
+				<version>3.8.1</version>
 				<configuration>
-					<!-- Убедись, что здесь указана версия Java 17 или выше -->
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-							<!-- Укажи версию Lombok, если она не управляется родителем -->
-							<version>${lombok.version}</version>
-						</path>
-						<!-- Добавь другие процессоры аннотаций, если используешь (напр. MapStruct) -->
-					</annotationProcessorPaths>
+					<release>17</release>
 				</configuration>
 			</plugin>
 			<plugin>

@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import Slider from "../components/Slider";
 import CategoryCard from "../components/CategoryCard";
 import ProductList from "../components/ProductList";
-import "./Home.css";
+import "../styles/pages/Home.css"; // Keep the styles in a separate file
 
-// --- Заглушки данных ---
 const sliderItems = [
   {
     id: 1,
@@ -116,7 +115,6 @@ const discountedProducts = [
     imageUrl: "https://placehold.co/200x150/A3333D/EEE?text=Слива",
   },
 ];
-// ---------------------------------------------------------
 
 function Home() {
   return (
@@ -124,8 +122,6 @@ function Home() {
       <section className="home-section slider-section">
         <Slider items={sliderItems} />
       </section>
-
-      {/* Убрал секцию "Зеленая линия" для упрощения, можно вернуть по аналогии */}
 
       <section className="home-section category-section">
         <div className="section-header">

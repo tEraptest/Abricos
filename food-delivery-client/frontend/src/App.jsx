@@ -1,24 +1,21 @@
-// src/App.jsx
 import React from "react";
-import "./App.css";
+import "./styles/App.css"; // Обновленный путь
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
-import CartPage from "./pages/CartPage";
-import Order from "./pages/Order";
-import LoginPage from "./pages/LoginPage"; // <-- Импорт
-import RegisterPage from "./pages/RegisterPage"; // <-- Импорт
-// Импорт для Protected Route (создадим ниже)
-import ProtectedRoute from "./components/ProtectedRoute";
+import Header from "./components/Header/Header"; // Обновленный путь
+import Footer from "./components/Footer/Footer"; // Обновленный путь
+import Home from "./pages/Home/Home"; // Обновленный путь
+import Catalog from "./pages/Catalog/Catalog"; // Обновленный путь
+import CartPage from "./pages/CartPage/CartPage"; // Обновленный путь
+import Order from "./pages/Order/Order"; // Обновленный путь
+import LoginPage from "./pages/LoginPage/LoginPage"; // Обновленный путь
+import RegisterPage from "./pages/RegisterPage/RegisterPage"; // Обновленный путь
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute"; // Обновленный путь
 
 function App() {
   return (
     <div className="App">
       <Header />
       <main className="app-main-content">
-        {" "}
         <Routes>
           {/* Публичные маршруты */}
           <Route path="/" element={<Home />} />
@@ -40,4 +37,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

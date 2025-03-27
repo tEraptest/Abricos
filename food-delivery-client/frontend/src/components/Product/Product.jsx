@@ -1,7 +1,5 @@
 import React from "react";
-import "./Product.css";
-// Позже можно импортировать иконки
-// import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/outline'; // Пример
+import "./Product.module.css"; // Updated path for styles
 
 function Product({ product }) {
   // Функция для обработки клика по кнопке "Добавить" (пока заглушка)

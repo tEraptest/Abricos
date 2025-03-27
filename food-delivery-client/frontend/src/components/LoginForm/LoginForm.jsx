@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser, clearAuthError } from "../store/authSlice";
 import Input from "./UI/Input"; // Наш кастомный Input
 import Button from "./UI/Button"; // Наш кастомный Button (или обычный button)
-import "./AuthForm.css"; // Общие стили для форм авторизации (создадим)
+import "./LoginForm.module.css"; // Общие стили для форм авторизации (создадим)
 
 function LoginForm() {
   const dispatch = useDispatch();

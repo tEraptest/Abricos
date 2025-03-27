@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./CategoryCard.css";
+import "./CategoryCard.module.css"; // Updated path for styles
 
 function CategoryCard({ name, imageUrl, link }) {
   return (

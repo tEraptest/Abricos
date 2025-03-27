@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Slider.css";
+import "../styles/components/Slider.css"; // Updated path for styles
 
 function Slider({ items = [], interval = 5000 }) {
   // Добавили интервал по умолчанию
