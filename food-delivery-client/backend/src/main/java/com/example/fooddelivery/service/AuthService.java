@@ -1,22 +1,23 @@
 package com.example.fooddelivery.service;
 
-import com.example.fooddelivery.dto.AuthResponse;
-import com.example.fooddelivery.dto.LoginRequest;
-import com.example.fooddelivery.dto.RegisterRequest;
-import com.example.fooddelivery.model.Role;
-import com.example.fooddelivery.model.User;
-import com.example.fooddelivery.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+import java.util.Set;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException; // Используем для login
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional; // Для управления транзакциями
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set; // Для добавления роли
+import com.example.fooddelivery.dto.AuthResponse;
+import com.example.fooddelivery.dto.LoginRequest;
+import com.example.fooddelivery.dto.RegisterRequest;
+import com.example.fooddelivery.model.Role; // Используем для login
+import com.example.fooddelivery.model.User;
+import com.example.fooddelivery.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor; // Для управления транзакциями
 
 @Service
 @RequiredArgsConstructor
