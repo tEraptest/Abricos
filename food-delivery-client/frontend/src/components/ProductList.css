@@ -1,0 +1,6 @@
+/* Add styles for ProductList if needed */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
