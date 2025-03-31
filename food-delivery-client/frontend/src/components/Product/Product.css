@@ -37,7 +37,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: var(--color-palette-vibrant-red);
+  background-color: var(--color-palette-vibrant-red); /* Ярко-красный */
   color: var(--color-text-light);
   padding: 3px 8px;
   border-radius: 4px;
@@ -118,7 +118,7 @@
 }
 
 .add-to-cart-button {
-  background-color: var(--color-palette-orange-red);
+  background-color: var(--color-palette-orange-red); /* Оранжево-красный */
   color: var(--color-text-light);
   border: none;
   border-radius: 0; /* У кнопки нет скругления */

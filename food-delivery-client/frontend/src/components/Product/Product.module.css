@@ -1,6 +1,25 @@
 .product {
-  border: 1px solid var(--color-border);
-  padding: 10px;
-  border-radius: 8px;
+  position: relative;
   background-color: var(--color-background-light);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  padding: 10px;
+}
+
+.product:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-palette-vibrant-red);
+  color: var(--color-text-light);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }

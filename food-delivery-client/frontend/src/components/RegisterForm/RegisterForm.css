@@ -10,11 +10,11 @@
 .auth-form h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: var(--color-palette-dark-red);
+  color: var(--color-palette-dark-red); /* Темно-красный */
 }
 
 .error-message {
-  color: var(--color-palette-vibrant-red);
+  color: var(--color-palette-vibrant-red); /* Ярко-красный */
   margin-top: 10px;
   text-align: center;
 }
@@ -22,7 +22,7 @@
 .auth-button {
   width: 100%;
   padding: 12px;
-  background-color: var(--color-palette-orange-red);
+  background-color: var(--color-palette-orange-red); /* Оранжево-красный */
   color: var(--color-text-light);
   border: none;
   border-radius: 5px;

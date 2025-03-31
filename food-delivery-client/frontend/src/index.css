@@ -1,15 +1,13 @@
 /* src/index.css */
 
 :root {
-  /* !!! ЗАМЕНИ ЭТИ HEX-КОДЫ НА ТОЧНЫЕ ИЗ ТВОЕЙ ПАЛИТРЫ !!! */
   --color-palette-dark-red: #a3333d;
   --color-palette-vibrant-red: #e64c65;
   --color-palette-orange-red: #f57a5d;
   --color-palette-orange: #f9a857;
   --color-palette-light-yellow: #fcda8a;
-  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
-  /* Дополнительные цвета */
+  /* Additional colors */
   --color-text-primary: #212529;
   --color-text-secondary: #6c757d;
   --color-text-light: #ffffff;
