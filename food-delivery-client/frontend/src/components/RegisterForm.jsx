@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser, clearAuthError } from "../../store/slices/authSlice";
-import Input from "../UI/Input/Input";
-import Button from "../UI/Button";
-import "./RegisterForm.css";
+import { registerUser, clearAuthError } from "../store/authSlice";
+import Input from "./UI/Input";
+import Button from "./UI/Button";
+import "./AuthForm.css";
 
 function RegisterForm() {
   const dispatch = useDispatch();
@@ -12,11 +12,12 @@ function RegisterForm() {
   const {
     register,
     handleSubmit,
-    watch,
+    watch, // Для проверки совпадения паролей
     formState: { errors },
     setError,
   } = useForm();
 
+  // Очищаем ошибку при размонтировании
   useEffect(() => {
     return () => {
       dispatch(clearAuthError());
@@ -24,6 +25,7 @@ function RegisterForm() {
   }, [dispatch]);
 
   const onSubmit = async (data) => {
+    // Удаляем confirmPassword перед отправкой на сервер
     const { confirmPassword, ...registerData } = data;
     const resultAction = await dispatch(registerUser(registerData));
 
@@ -33,8 +35,10 @@ function RegisterForm() {
         message: resultAction.payload,
       });
     }
+    // Редирект на уровне страницы RegisterPage
   };
 
+  // Получаем текущее значение поля password для валидации confirmPassword
   const passwordValue = watch("password");
 
   return (
@@ -59,6 +63,7 @@ function RegisterForm() {
         {...register("email", {
           required: "Email обязателен",
           pattern: {
+            // Простая проверка email
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: "Некорректный email",
           },
@@ -68,7 +73,7 @@ function RegisterForm() {
       />
 
       <Input
-        label="Имя"
+        label="Имя" // Опционально
         id="register-firstName"
         {...register("firstName")}
         error={errors.firstName}
@@ -76,7 +81,7 @@ function RegisterForm() {
       />
 
       <Input
-        label="Фамилия"
+        label="Фамилия" // Опционально
         id="register-lastName"
         {...register("lastName")}
         error={errors.lastName}
@@ -101,12 +106,13 @@ function RegisterForm() {
         type="password"
         {...register("confirmPassword", {
           required: "Подтверждение пароля обязательно",
-          validate: (value) => value === passwordValue || "Пароли не совпадают",
+          validate: (value) => value === passwordValue || "Пароли не совпадают", // Проверка совпадения
         })}
         error={errors.confirmPassword}
         autoComplete="new-password"
       />
 
+      {/* Отображение общей ошибки сервера */}
       {errors.serverError && (
         <p className="error-message">{errors.serverError.message}</p>
       )}

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { loginUserApi, registerUserApi } from "../services/authApi"; // Создадим этот файл позже
+import { loginUserApi, registerUserApi } from "../../services/authApi"; // Исправлен путь
 
 // --- Async Thunks (Асинхронные операции) ---
 

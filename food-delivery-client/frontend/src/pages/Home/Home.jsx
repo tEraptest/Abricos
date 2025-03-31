@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "../components/Slider";
-import CategoryCard from "../components/CategoryCard";
-import ProductList from "../components/ProductList";
-import "../styles/pages/Home.css"; // Keep the styles in a separate file
+import Slider from "../../components/Slider/Slider";
+import CategoryCard from "../../components/CategoryCard/CategoryCard";
+import ProductList from "../../components/ProductList"; // Исправлен путь
+import "./Home.css"; // Исправлен путь
 
 const sliderItems = [
   {

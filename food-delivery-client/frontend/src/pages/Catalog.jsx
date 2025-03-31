@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList from "../components/ProductList";
+import ProductList from "../components/ProductList/ProductList"; // Corrected path
 
 // Заглушка для списка товаров (пока без данных с сервера)
 const dummyProducts = [

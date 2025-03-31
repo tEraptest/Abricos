@@ -5,9 +5,8 @@
 }
 
 .app-main-content {
-  flex-grow: 1; /* Основной контент занимает все доступное пространство */
-  padding-top: 20px; /* Добавим отступ сверху (если шапка фиксированная) */
-  padding-bottom: 20px; /* Отступ снизу */
+  flex-grow: 1;
+  padding: 20px;
 }
 
 .App-logo {

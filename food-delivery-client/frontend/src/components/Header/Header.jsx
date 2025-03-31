@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../store/authSlice";
-import "./Header.module.css"; // Updated path for styles
+import { logout } from "../../store/slices/authSlice"; // Исправлен путь
+import "./Header.css"; // Исправлен путь
 
 function Header() {
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);

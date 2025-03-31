@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, Link } from "react-router-dom"; // Используем useNavigate для редиректа
-import LoginForm from "../components/LoginForm";
+import { useNavigate, Link } from "react-router-dom";
+import LoginForm from "../components/LoginForm/LoginForm"; // Corrected path
 
 function LoginPage() {
   const navigate = useNavigate();

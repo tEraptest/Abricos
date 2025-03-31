@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "../styles/components/Slider.css"; // Updated path for styles
+import "./Slider.css"; // Исправлен путь
 
 function Slider({ items = [], interval = 5000 }) {
-  // Добавили интервал по умолчанию
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (items.length < 2) return; // Не запускаем таймер, если слайдов мало
+    if (items.length < 2) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
     }, interval);
 
-    return () => clearInterval(timer); // Очищаем таймер при размонтировании
+    return () => clearInterval(timer);
   }, [items.length, interval]);
 
   if (!items || items.length === 0) {
@@ -38,15 +37,13 @@ function Slider({ items = [], interval = 5000 }) {
         {items.map((item) => (
           <div className="slide" key={item.id}>
             <a href={item.link} target="_blank" rel="noopener noreferrer">
-              {" "}
-              {/* Открываем в новой вкладке */}
               <img src={item.imageUrl} alt={item.alt} />
             </a>
           </div>
         ))}
       </div>
 
-      {items.length > 1 && ( // Показываем кнопки только если слайдов больше одного
+      {items.length > 1 && (
         <>
           <button className="slider-button prev" onClick={goToPrevious}>
             ❮
@@ -57,7 +54,6 @@ function Slider({ items = [], interval = 5000 }) {
         </>
       )}
 
-      {/* Индикаторы (точки) */}
       {items.length > 1 && (
         <div className="slider-dots">
           {items.map((_, index) => (

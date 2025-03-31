@@ -1,5 +1,7 @@
 import React from "react";
-import Product from "../Product/Product"; // Corrected path
+import Product from "./Product";
+// Update import to use local module CSS
+import "./ProductList.module.css";
 
 function ProductList({ products }) {
   return (
@@ -11,4 +13,4 @@ function ProductList({ products }) {
   );
 }
 
-export default ProductList;
+export default ProductList; // Вот эта строка!

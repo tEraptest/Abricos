@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import RegisterForm from "../components/RegisterForm";
+import RegisterForm from "../components/RegisterForm/RegisterForm"; // Corrected path
 
 function RegisterPage() {
   const navigate = useNavigate();

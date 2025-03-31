@@ -1,5 +1,6 @@
 import React from "react";
-import "./OrderForm.css"; // Corrected path
+// Update import to use local module CSS
+import "./OrderForm.module.css";
 
 const OrderForm = () => {
   return <div>OrderForm</div>;

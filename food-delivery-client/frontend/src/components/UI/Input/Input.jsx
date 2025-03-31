@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/components/UI/Input.css"; // Updated path for styles
+import "./Input.css"; // Corrected path
 
 // Используем forwardRef, чтобы можно было передать ref из react-hook-form
 const Input = React.forwardRef(({ label, id, error, ...props }, ref) => {
